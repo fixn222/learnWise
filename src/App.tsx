@@ -11,7 +11,7 @@ import "./App.css";
 import { Toaster } from "./components/refine-ui/notification/toaster";
 import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
-import { dataProvider } from "./providers/data";
+import { dataProvider } from "./providers/data.ts";
 //import { DashBoard } from "./pages/DashBoard";
 import DashBoard from "./pages/DashBoard.tsx";
 import { BookOpen, Home } from "lucide-react";
@@ -45,7 +45,7 @@ function App() {
                 {
                   name: 'subjects',
                   list: '/subjects',
-                  create: '/subject/create',
+                  create: '/subjects/create',
                   meta: { label: 'Subjects', icon: <BookOpen /> }
                 }
               ]}
@@ -60,7 +60,6 @@ function App() {
                 >
 
                   <Route path="/" element={<DashBoard />} />
-
 
                   <Route path="subjects">
                     <Route index element={<SubjectsList />} />
