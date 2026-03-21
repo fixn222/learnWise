@@ -42,7 +42,7 @@ export const DEPARTMENTS = [
   "Law",
 ] as const;
 
-export const DEPARTMENT_OPT= DEPARTMENTS.map((dept) => ({
+export const DEPARTMENT_OPT = DEPARTMENTS.map((dept) => ({
   value: dept,
   label: dept,
 }));
@@ -57,7 +57,7 @@ export const ALLOWED_TYPES = [
 
 export const CLOUDINARY_UPLOAD_URL = import.meta.env.VITE_CLOUDINARY_UPLOAD_URL;
 export const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-export const BACKEND_BASE_URL ="http://localhost:8000/api/";
+export const BACKEND_BASE_URL = "http://localhost:8000/api/";
 
 export const BASE_URL = import.meta.env.VITE_API_URL;
 export const ACCESS_TOKEN_KEY = import.meta.env.VITE_ACCESS_TOKEN_KEY;
@@ -67,3 +67,4 @@ export const REFRESH_TOKEN_URL = `${BASE_URL}/refresh-token`;
 
 export const CLOUDINARY_UPLOAD_PRESET = import.meta.env
   .VITE_CLOUDINARY_UPLOAD_PRESET;
+
