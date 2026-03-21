@@ -14,11 +14,21 @@ import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import { dataProvider } from "./providers/data.ts";
 //import { DashBoard } from "./pages/DashBoard";
 import DashBoard from "./pages/DashBoard.tsx";
-import { BookOpen, Home } from "lucide-react";
+import { BookOpen, GraduationCap, Home } from "lucide-react";
 import { Layout } from "./components/refine-ui/layout/layout";
 import SubjectsList from "./pages/subjects/list.tsx";
 import SubjectsCreate from "./pages/subjects/Create.tsx";
+import ClassesList from "./pages/classes/list.tsx";
+import Create from "./pages/classes/Create.tsx";
 
+/**
+ * Main application component that configures providers, resources, theming, devtools, and routing for the app.
+ *
+ * Renders the Refine application shell with data and notification providers, keyboard navigation (Kbar), devtools,
+ * global UI helpers (toaster, unsaved-changes notifier, document title handler), and the nested route structure.
+ *
+ * @returns The root React element that mounts the application and its routes.
+ */
 function App() {
   return (
     <BrowserRouter>
@@ -47,7 +57,13 @@ function App() {
                   list: '/subjects',
                   create: '/subjects/create',
                   meta: { label: 'Subjects', icon: <BookOpen /> }
-                }
+                },
+                {
+                  name: 'classes',
+                  list: '/classes',
+                  create: '/classes/create',
+                  meta: { label: 'Classes', icon: <GraduationCap /> }
+                },
               ]}
             >
               <Routes >
@@ -64,6 +80,10 @@ function App() {
                   <Route path="subjects">
                     <Route index element={<SubjectsList />} />
                     <Route path="create" element={<SubjectsCreate />} />
+                  </Route>
+                  <Route path="classes">
+                    <Route index element={<ClassesList />} />
+                    <Route path="create" element={<Create />} />
                   </Route>
 
 
