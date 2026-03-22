@@ -21,6 +21,14 @@ import SubjectsCreate from "./pages/subjects/Create.tsx";
 import ClassesList from "./pages/classes/list.tsx";
 import Create from "./pages/classes/Create.tsx";
 
+/**
+ * Main application component that configures providers, resources, theming, devtools, and routing for the app.
+ *
+ * Renders the Refine application shell with data and notification providers, keyboard navigation (Kbar), devtools,
+ * global UI helpers (toaster, unsaved-changes notifier, document title handler), and the nested route structure.
+ *
+ * @returns The root React element that mounts the application and its routes.
+ */
 function App() {
   return (
     <BrowserRouter>
